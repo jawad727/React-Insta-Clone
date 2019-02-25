@@ -1,4 +1,6 @@
 import React from 'react' 
+import BTN from '../Styled Components/StyledComp'
+
 
 
 
@@ -17,14 +19,24 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='centered'>
+      <div className='logindiv'>
         
+      <img className="loginlogo" src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png'/>
+
+        <p>Username:</p>
         <input
+          className="loginbar"
           type="text"
           value={this.state.inputText}
           onChange={this.handleChanges}
         />
-        <button onClick={this.signIn}>Sign in</button>
+
+
+        <BTN onClick={this.signIn}>Log in</BTN>
+      </div>
+
+      
       </div>
     );
   }
