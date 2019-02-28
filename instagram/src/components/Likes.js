@@ -1,18 +1,20 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 class Likes extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
   
-        likes: props.likes
+        likes: props.likes,
+        isLiked: false
       }
     }
   
     addLike = () => {
         this.setState({
-            likes: this.state.likes +1
+            isLiked: !this.state.isLiked,
+            likes: this.state.isLiked  === false ? this.state.likes + 1 : this.state.likes - 1
         })
     }
 
@@ -35,6 +37,9 @@ class Likes extends React.Component {
   }
   }
   
+  Likes.propTypes = {
+    likes: PropTypes.number.isRequired
+  }
   
   export default Likes;
   

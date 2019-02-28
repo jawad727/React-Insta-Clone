@@ -2,13 +2,13 @@ import React from 'react';
 import CommentSection from './CommentSection'
 import InstaPost from './InstaPost'
 import SearchBar from './SearchBar'
-
+import PropTypes from 'prop-types';
 
 
 const PostContainer = (props) => {
     
     return (
-        <div className='postfeed'>
+        <div className='postfeed' key={Date.now()}>
         
             {props.postData.map((item) => {
                 return (<div className='postt'>
@@ -22,6 +22,12 @@ const PostContainer = (props) => {
         
     )
 }
+
+PostContainer.propTypes = {
+    postData: PropTypes.array.isRequired,
+    dummyData: PropTypes.array.isRequired,
+    
+};
 
 export default PostContainer
 
